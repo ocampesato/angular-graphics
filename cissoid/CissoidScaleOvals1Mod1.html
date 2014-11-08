@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="App">
+ <head>
+   <meta chartset="utf-8">
+   <title>SVG and Angular</title>
+
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js"></script>
+   <script src="CissoidScaleOvals1Mod1.js"></script>
+ </head>
+ 
+ <body> 
+   <div ng-controller="MyCtrl">
+     <svg width="800" height="500" ng-init="elems = getElems()">
+       <ellipse ng-repeat="p in elems"
+          ng-attr-cx="{{::p.cx}}" ng-attr-cy="{{::p.cy}}" 
+          ng-attr-rx="{{::p.rx}}" ng-attr-ry="{{::p.ry}}" 
+          ng-attr-transform="{{::p.tr}}" 
+          ng-attr-fill="{{::p.fill}}">
+       </ellipse>
+     </svg>
+   </div>
+ </body>
+</html>
+

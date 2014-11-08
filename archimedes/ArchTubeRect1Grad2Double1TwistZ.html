@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="App">
+ <head>
+   <meta chartset="utf-8">
+   <title>SVG and Angular</title>
+
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js"></script>
+   <script src="ArchTubeRect1Grad2Double1TwistZ.js"></script>
+ </head>
+ 
+ <body> 
+   <div ng-controller="MyCtrl">
+     <svg width="800" height="500"> 
+       <rect once-bind ng-repeat="p in getElems()" 
+          ng-attr-x="{{::p.x}}" ng-attr-y="{{::p.y}}" 
+          ng-attr-width="{{::p.rw}}" ng-attr-height="{{::p.rh}}" 
+          ng-attr-fill="{{::p.fill}}">
+       </rect>
+     </svg>
+   </div>
+ </body>
+</html>
+
